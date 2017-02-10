@@ -1,2 +1,2 @@
 # IoTMakerLab
-Resources for the IoT Maker Lab at ZF
+Resources for the IoT Maker Lab.
