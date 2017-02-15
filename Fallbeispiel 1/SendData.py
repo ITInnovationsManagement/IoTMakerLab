@@ -85,10 +85,11 @@ class D2CMsgSender:
             return temp_c
 		
 if __name__ == '__main__':
-    primary_key = 'xxxx'	
-    connectionString = 'HostName=IoT-Makerlab-Hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey'+primary_key
+    assigned_number = ''
+    primary_key = ''	
+    connectionString = 'HostName=ZFIoTMakerHub'+assigned_nummber+'.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey'+primary_key
     d2cMsgSender = D2CMsgSender(connectionString)
-    deviceId = 'iotlab#'
+    deviceId = 'iotlab'+assigned_number
     
     while True:
         temperature = d2cMsgSender.read_temp()
