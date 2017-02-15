@@ -68,10 +68,12 @@ class DeviceManager:
         return r.text, r.status_code
         
 if __name__ == '__main__':
-    primary_key = 'xxxx'
-    connectionString = 'HostName=IoT-Makerlab-Hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey='+primary_key
+    assigned_number = ''
+    primary_key = ''
+    connectionString = 'HostName=ZfIoTMakerHub'+assigned_number+'.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey='+primary_key
     dm = DeviceManager(connectionString)
-    deviceId = 'iotlab#'
+    deviceId = 'iotlab'+assigned_number
+    
     print dm.createDeviceId(deviceId)
     print dm.retrieveDeviceId(deviceId)
     print dm.listDeviceIds()
