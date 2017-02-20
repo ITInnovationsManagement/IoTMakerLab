@@ -12,8 +12,8 @@ Anschließend werden die Programme und Dateien für den Workshop aus dem GitHub 
 Die lädt die Dateien herunter und legt sie auf dem Desktop im Order MakerLab ab.
 Schritt 3: Installationsdatei ausführen
 In den Dateien aus GitHub befindet sich eine Installationsdatei zum Installieren der notwendigen Pakete. Durch die Eingabe folgender Statements wird diese ausgeführt:
-		sudo chmod+x /home/pi/Desktop/MakerLab/install.sh
-		sudo /home/pi/Desktop/MakerLab/install.sh
+	sudo chmod+x /home/pi/Desktop/MakerLab/install.sh
+	sudo /home/pi/Desktop/MakerLab/install.sh
 Bei Problemen bei der Installation müssen die Schritte 5 und 6 ausgeführt werden
 Schritt 4: OS konfigurieren
 Zum Konfigurieren des Betriebssystems gibt es ein grafisches Tool welches über das Terminal mit folgender Zeile gestartet werden kann:
