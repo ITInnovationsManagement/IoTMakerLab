@@ -1,7 +1,7 @@
 """
-Module Name:  d2cMsgSender.py
+Module Name:  SendData.py
 Project:      IoTHubRestSample
-Copyright (c) Microsoft Corporation.
+Copyright (c) Microsoft Corporation & Sandro Veiga Perez.
 Using [Send device-to-cloud message](https://msdn.microsoft.com/en-US/library/azure/mt590784.aspx) API to send device-to-cloud message from the simulated device application to IoT Hub.
 This source is subject to the Microsoft Public License.
 See http://www.microsoft.com/en-us/openness/licenses.aspx#MPL
@@ -64,18 +64,23 @@ class D2CMsgSender:
         GPIO.setup(10, GPIO.IN)
         GPIO.setup(3, GPIO.OUT)
         GPIO.input(10)
-		
+
+#Die Main-Methode in der die Daten geschickt werden
 if __name__ == '__main__':
-    connectionString = 'HostName=IoT-Makerlab-Hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=8gtw3MG9uzf+Jy5w8uErrg3hVStY/vMHZO43An1DieA='
+    assigned_number = ''
+    primary_key = ''
+    connectionString = 'HostName=IoT-Makerlab-Hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey='+primary_key
+    #Erzeugt einen D2CMsgSender-Objekt zum Senden von Device-to-Cloud Nachrichten
     d2cMsgSender = D2CMsgSender(connectionString)
-    room = 'iot_maker_01'
-    deviceId = "raspberry_python"
+    room = 'iot_maker_'+assigned_number
+    deviceId = "iotmaker"+assigned_number
     
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
 
-    GPIO.setup(10, GPIO.IN)
-    GPIO.setup(3, GPIO.OUT)
+    
+    GPIO.setup(10, GPIO.IN) #PIN10 wird als Input definiert um die Sensordaten aufzunehmen
+    GPIO.setup(3, GPIO.OUT) #PIN3 ist ein Ausgang zum Ansteuern der LED
     
     occ_old = GPIO.input(10)
     try:
@@ -83,10 +88,10 @@ if __name__ == '__main__':
             occ=GPIO.input(10)
             if(occ_old != occ):
                 print "Status geaendert"
-                if occ==0:                 #When output from motion sensor is LOW
+                if occ==0:                 #Wenn der Output des Bewegungssensors LOW ist
                     print "No intruders",occ
                     GPIO.output(3, GPIO.LOW)
-                elif occ==1:               #When output from motion sensor is HIGH
+                elif occ==1:               #Wenn der Output des Bewegungssensors LOW ist
                     print "Intruder detected",occ
                     GPIO.output(3,GPIO.HIGH)
                 time_seconds = time.time()
