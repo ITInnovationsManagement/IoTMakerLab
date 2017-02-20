@@ -11,6 +11,7 @@ Zum Updaten des Betriebssystems die Konsole öffnen und folgende Zeile eingeben 
 * Schritt 2: Repos von Git Hub laden
 Anschließend werden die Programme und Dateien für den Workshop aus dem GitHub Repository geladen. Hierfür muss im Terminal folgende Zeile eingegeben werden:
 
+
 	git clone https://github.com/ITInnovationsManagement/IoTMakerLab /home/pi/Desktop/MakerLab
         
 Die lädt die Dateien herunter und legt sie auf dem Desktop im Order MakerLab ab.
@@ -20,6 +21,7 @@ In den Dateien aus GitHub befindet sich eine Installationsdatei zum Installieren
 
 	sudo chmod+x /home/pi/Desktop/MakerLab/install.sh
 	sudo /home/pi/Desktop/MakerLab/install.sh
+	
 Bei Problemen bei der Installation müssen die Schritte 5 und 6 ausgeführt werden
 
 * Schritt 4: OS konfigurieren
