@@ -1,7 +1,7 @@
 """
-Module Name:  deviceManager.py
+Module Name:  RegisterDevice.py
 Project:      IoTHubRestSample
-Copyright (c) Microsoft Corporation.
+Copyright (c) Microsoft Corporation & parts from Sandro Veiga Perez
 Using [Device Indentities REST APIs](https://msdn.microsoft.com/en-us/library/azure/mt548489.aspx) to create a new device identity, retrieve a device identity, and list device identities.
 This source is subject to the Microsoft Public License.
 See http://www.microsoft.com/en-us/openness/licenses.aspx#MPL
@@ -66,11 +66,17 @@ class DeviceManager:
         url = 'https://%s/devices?top=%d&api-version=%s' % (self.iotHost, top, self.API_VERSION)
         r = requests.get(url, headers={'Content-Type': 'application/json', 'Authorization': sasToken})
         return r.text, r.status_code
-        
+
+#Die Main Methode in der das Gerät registriert wird
 if __name__ == '__main__':
-    connectionString = 'HostName=IoT-Makerlab-Hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=8gtw3MG9uzf+Jy5w8uErrg3hVStY/vMHZO43An1DieA='
+    assigned_number = ''
+    primary_key = ''
+    connectionString = 'HostName=ZfIoTMakerHub'+assigned_number+'.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey='+primary_key
+
+    #Erzeugt ein DeviceManager Objekt mit dem ConnectionString zum Verbinden mit dem IoT Hub
     dm = DeviceManager(connectionString)
-    deviceId = 'IOT-GNS-Temperature-2'
+    deviceId = 'iotlab'+assigned_number
+    
     print dm.createDeviceId(deviceId)
     print dm.retrieveDeviceId(deviceId)
     print dm.listDeviceIds()
