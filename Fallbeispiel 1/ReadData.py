@@ -2,8 +2,7 @@ import pymssql
 import time
 import RPi.GPIO as GPIO
 
-#assigned_number = ''  
-#deviceid = "iotlab"+assigned_number
+deviceid = "iotlab#"
 conn = pymssql.connect(server='iotmakerlab.database.windows.net', user='ITIM@iotmakerlab', password='xxxx', database='IoT-Makerlab-DB')
 cursor = conn.cursor()
 stmt = 'SELECT top 1 * FROM dbo.IML_TEMP ORDER BY TIMESTAMP DESC;'
