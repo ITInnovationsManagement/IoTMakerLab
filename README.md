@@ -21,10 +21,11 @@ Bei Problemen bei der Installation müssen die Schritte 5 und 6 ausgeführt werd
 
 * Schritt 4: OS konfigurieren
 Zum Konfigurieren des Betriebssystems gibt es ein grafisches Tool welches über das Terminal mit folgender Zeile gestartet werden kann:
-sudo raspi-config
+	sudo raspi-config
 	1. Sprache umschalten über Internalisation
 	2. SSH einschalten
 	3. Boot in Desktop ermöglichen
+	
 * Schritt 5:  WLAN konfigurieren
 Zur Konfiguration des WLAN muss zunächst folgendes Statement im Terminal ausgeführt warden:
 sudo nano /etc/network/interfaces
