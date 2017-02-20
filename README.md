@@ -46,9 +46,10 @@ Hierfür muss folgende Zeile im Terminal ausgeführt werden:
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
 In der sich öffnenden Datei muss folgendes eingegeben werden:
+
 	network={
 		ssid="SSID1"
-       		psk="PASSWORD"
+		psk="PASSWORD"
 		key_mgmt=WPA-PSK
 	}
 	network={
