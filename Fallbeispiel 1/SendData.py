@@ -87,7 +87,7 @@ class D2CMsgSender:
 if __name__ == '__main__':
     assigned_number = ''
     primary_key = ''	
-    connectionString = 'HostName=ZFIoTMakerHub'+assigned_nummber+'.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey'+primary_key
+    connectionString = 'HostName=ZFIoTMakerHub'+assigned_number+'.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey='+primary_key
     d2cMsgSender = D2CMsgSender(connectionString)
     deviceId = 'iotlab'+assigned_number
     
