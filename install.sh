@@ -1,5 +1,3 @@
-#!/bin/bash
-	
 # Remotedesktop ermöglichen
 sudo apt-get install tightvncserver
 sudo apt-get install xrdp
