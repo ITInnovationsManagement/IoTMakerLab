@@ -94,7 +94,7 @@ if __name__ == '__main__':
     while True:
         temperature = d2cMsgSender.read_temp()
         time_seconds = time.time()
-        timestamp = datetime.datetime.fromtimestamp(time_seconds).strftime('%Y-%m-%d %H:%M:%S')
+        timestamp = datetime.datetime.fromtimestamp(time_seconds).strftime('%Y-%m-%dT%H:%M:%S%Z')
         jsonString = JSONEncoder().encode({
             "deviceid" : deviceId, 
             "temperature": temperature,
