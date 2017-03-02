@@ -6,7 +6,7 @@ Nachdem das Raspbian Betriebssystem auf eine SD-Karte gebrannt und in den Raspbe
 * Schritt 1: OS Updaten
 Zum Updaten des Betriebssystems die Konsole öffnen und folgende Zeile eingeben und mit Enter ausführen:
 
-        sudo update
+        sudo apt get update
 
 * Schritt 2: Repos von Git Hub laden
 Anschließend werden die Programme und Dateien für den Workshop aus dem GitHub Repository geladen. Hierfür muss im Terminal folgende Zeile eingegeben werden:
