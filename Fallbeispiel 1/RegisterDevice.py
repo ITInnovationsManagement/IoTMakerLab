@@ -71,7 +71,7 @@ class DeviceManager:
 if __name__ == '__main__':
     assigned_number = ''
     primary_key = ''
-    connectionString = 'HostName=ZfIoTMakerHub'+assigned_number+'.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey='+primary_key
+    connectionString = 'HostName=ZFIoTMakerHub'+assigned_number+'.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey='+primary_key
 
     #Erzeugt ein DeviceManager Objekt mit dem ConnectionString zum Verbinden mit dem IoT Hub
     dm = DeviceManager(connectionString)
