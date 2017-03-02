@@ -67,10 +67,10 @@ class DeviceManager:
         r = requests.get(url, headers={'Content-Type': 'application/json', 'Authorization': sasToken})
         return r.text, r.status_code
 
-#Die Main Methode in der das Gerät registriert wird
+#Die Main Methode in der das Geraet registriert wird
 if __name__ == '__main__':
-    assigned_number = ''
     primary_key = ''
+    assigned_number = ''
     connectionString = 'HostName=ZFIoTMakerHub'+assigned_number+'.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey='+primary_key
 
     #Erzeugt ein DeviceManager Objekt mit dem ConnectionString zum Verbinden mit dem IoT Hub
